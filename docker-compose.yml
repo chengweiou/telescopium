@@ -1,9 +1,9 @@
 services:
-  xxx-web:
-    container_name: xxx-web
+  telescopium:
+    container_name: telescopium
     ports:
-      - 61001:80
+      - 61100:80
     volumes:
-      - ~/Desktop/docker/universe/xxx-web/dist/:/usr/share/nginx/html/
-      - ~/Desktop/docker/universe/xxx-web/default.conf:/etc/nginx/conf.d/default.conf
+      - ~/Desktop/docker/universe/telescopium/dist/:/usr/share/nginx/html/
+      - ~/Desktop/docker/universe/telescopium/default.conf:/etc/nginx/conf.d/default.conf
     image: nginx
