@@ -7,6 +7,7 @@
     "build:uat": "vite build --mode uat"
   },
   "dependencies": {
+    "element-plus": "latest",
     "vue": "^3.1.2",
     "vue-i18n": "9",
     "vue-router": "4",
