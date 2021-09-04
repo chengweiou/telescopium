@@ -14,13 +14,13 @@
 
         </div>
       </el-form-item>
-      <requestKv :k-name="`Header Name`" :v-name="`Header Value`" :list="form.headerList" :add-method="addHeader" :remove-method="removeHeader">
+      <requestKv :k-name="`Header Name`" :v-name="`Header Value`" :list="form.headerList" @addMethod="addHeader" @removeMethod="removeHeader">
         <template #shortcut>
           <el-button @click.prevent="addToken">token</el-button>
           <el-button @click.prevent="addLoginAccount">loginAccount</el-button>
         </template>
       </requestKv>
-      <requestKv k-name="`Param Name`" :v-name="`Param Value`" :list="form.paramList" :add-method="addParam" :remove-method="removeParam">
+      <requestKv k-name="`Param Name`" :v-name="`Param Value`" :list="form.paramList" @addMethod="addParam" @removeMethod="removeParam">
       </requestKv>
     </el-form>
     <div style="width: 100px;">
