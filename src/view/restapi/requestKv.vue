@@ -19,15 +19,25 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    kName: { type: String, default: 'k' },
-    vName: { type: String, default: 'v' },
-    list: { type: Array, required: true },
-  },
-  emits: ['addMethod', 'removeMethod'],
-}
+<script setup>
+// tip: 导入 component
+// tip: 导入 data
+// tip: 定义 各种 use
+// tip: 定义 页面
+defineProps({
+  kName: { type: String, default: 'k' },
+  vName: { type: String, default: 'v' },
+  addMethod: { type: Function, default: () => {} },
+  removeMethod: { type: Function, default: () => {} },
+  list: { type: Array, required: true },
+})
+defineEmits(['addMethod', 'removeMethod'])
+// tip: 定义 不需要关联的
+// tip: 定义 需要关联的
+// tip: 定义 computed 计算的
+// tip: 定义 方法
+// tip: 初始化空数据
 </script>
+
 <style scoped>
 </style>

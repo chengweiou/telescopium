@@ -1,4 +1,4 @@
-import clone from '@/fn/util/clone'
+import { clone } from '@/fn'
 
 const CLEAN_STATE = {
   asider: '',
@@ -7,6 +7,9 @@ const CLEAN_STATE = {
 const state = clone(CLEAN_STATE)
 
 const actions = {
+  async change({ commit, dispatch, state, rootState }, payload, config = {}) {
+    commit(payload.k, payload.v)
+  },
   async changeAsider({ commit, dispatch, state, rootState }, payload, config = {}) {
     commit('asider', payload)
   },

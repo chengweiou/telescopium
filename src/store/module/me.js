@@ -1,4 +1,4 @@
-import clone from '@/fn/util/clone'
+import { clone } from '@/fn'
 const CLEAN_STATE = {
   user: {}, // 目前用于给db获取身份区别
 }
@@ -8,6 +8,12 @@ const actions = {
 }
 
 const mutations = {
+}
+
+function initState(s) {
+  Object.keys(CLEAN_STATE).forEach(key => {
+    s[key] = CLEAN_STATE[key]
+  })
 }
 
 export default {

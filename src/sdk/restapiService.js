@@ -3,7 +3,7 @@ import exceptionUtil from './util/exceptionUtil'
 
 export default class {
   static send(e) {
-    let url = `${e.url}`
+    let url = `${e.url.indexOf('http')==0?'':'http://'}${e.url}`
     let options = { method: e.method, headers: {} }
     e.headerList.forEach(header => {
       options.headers[header.k] = header.v
@@ -22,7 +22,7 @@ export default class {
         options.body = e.body
         break
       case 'GET':
-        url = `${url}?${paramUtil.createUrlEncode(body)}`
+        url = `${url}${url.includes('?')?'&':'?'}${paramUtil.createUrlEncode(body)}`
         break
     }
     return this.r(url, options)

@@ -1,5 +1,5 @@
+import { clone } from '@/fn'
 import service from '@/sdk/restapiService'
-import clone from '@/fn/util/clone'
 
 const CLEAN_STATE = {
   formList: [{ method: 'GET', url: '', headerList: [], paramList: [] }],

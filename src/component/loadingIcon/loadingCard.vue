@@ -1,9 +1,17 @@
 <template>
-  login
+  <el-main>
+    <el-card style="margin-bottom: 20px;">
+      <template #header>
+        <el-icon> <icon-arrow-down /></el-icon>
+      </template>
+      <template #default></template>
+    </el-card>
+  </el-main>
 </template>
 
 <script setup>
 // tip: 导入 component
+import { ArrowDown as IconArrowDown } from '@element-plus/icons'
 // tip: 导入 data
 // tip: 定义 各种 use
 // tip: 定义 页面
@@ -15,8 +23,8 @@
 </script>
 
 <style scoped>
-</style>
 
+</style>
 <style>
 
 </style>

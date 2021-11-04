@@ -6,19 +6,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  computed: {
-    me() { return this.$store.state.me.user },
-  },
-  methods: {
-    go(v) {
-      if (this.$route.name == v) return
-      this.$store.dispatch('tab/changeAsider', v)
-      this.$router.push({ name: v })
-    },
-  },
+<script setup>
+// tip: 导入 component
+// tip: 导入 data
+// tip: 定义 各种 use
+// tip: 定义 页面
+// tip: 定义 不需要关联的
+// tip: 定义 需要关联的
+// tip: 定义 computed 计算的
+// tip: 定义 方法
+const go = (v) => {
+  if (route.name == v) return
+  store.dispatch('tab/changeAsider', v)
+  router.push({ name: v })
 }
+// tip: 初始化空数据
 </script>
 
 <style scoped>

@@ -4,10 +4,8 @@ import { router } from './router'
 import { store } from './store'
 import { i18n } from './i18n'
 import ElementPlus from 'element-plus'
-import 'element-plus/lib/theme-chalk/index.css'
+import 'element-plus/dist/index.css'
 import ElInputDiv from '@/component/el/el-input-div.vue'
-
-import setGlobal from './fn'
 
 import './assets/css/global.css'
 
@@ -19,5 +17,4 @@ app
   .use(ElementPlus, { size: 'mini', zIndex: 0 })
   .component('ElInputDiv', ElInputDiv)
 
-setGlobal(app.config.globalProperties)
 app.mount('#app')
