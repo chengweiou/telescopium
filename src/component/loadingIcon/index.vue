@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvas" style="width: 100%; height: 100%;"/>
+  <canvas ref="canvasDom" style="width: 100%; height: 100%;"/>
 </template>
 
 <script setup>
@@ -13,12 +13,12 @@ import { ref, computed, watch, onMounted, toRefs } from 'vue'
 // tip: 定义 页面
 const canvasDom = ref(null)
 // tip: 定义 不需要关联的
-const jumpTime = 30
-const current = 30
-const ball = { x: 0, y: 0 }
-const floor = 3
-const viewMoveTime = 100
-const viewMove = 0
+let jumpTime = 30
+let current = 30
+let ball = { x: 0, y: 0 }
+let floor = 3
+let viewMoveTime = 100
+let viewMove = 0
 // tip: 定义 需要关联的
 // tip: 定义 computed 计算的
 // tip: 定义 方法

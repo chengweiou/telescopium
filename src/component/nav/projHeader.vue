@@ -9,7 +9,13 @@
 <script setup>
 // tip: 导入 component
 // tip: 导入 data
+import { ref, computed } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter, useRoute } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+import { wait, emptyFn, clone, storage } from '@/fn'
 // tip: 定义 各种 use
+const store = useStore(), router = useRouter(), route = useRoute()
 // tip: 定义 页面
 // tip: 定义 不需要关联的
 // tip: 定义 需要关联的

@@ -17,7 +17,8 @@ export default class {
       }
     }
     options.headers.append('authorization', `Bearer ${storage.get('token')}`)
-    options.headers.append('loginAccount', JSON.stringify(storage.get('loginAccount')))
+    // todo tip: 直接带登录账号请求服务端 生产环境去除
+    options.headers.append('loginAccount', `${storage.get('loginAccount')}`)
     let response = {}
     try {
       response = await fetch(url, options)

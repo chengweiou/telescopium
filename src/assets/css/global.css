@@ -105,3 +105,21 @@ button { outline: none; }
 .el-loading-mask {
   background: transparent;
 }
+
+.el-menu {
+  --el-menu-background-color: transparent;
+  --el-menu-hover-background-color: #3a5fe6;
+  --el-menu-text-color: #fff;
+}
+.el-table {
+  --el-table-row-hover-background-color: #3a5fe6;
+}
+.el-table th.el-table__cell {
+  --el-table-header-background-color: transparent;
+}
+
+.el-pagination {
+  --el-pagination-background-color: transparent;
+  --el-pagination-button-background-color: transparent;
+  --el-pagination-button-disabled-background-color: transparent;
+}
