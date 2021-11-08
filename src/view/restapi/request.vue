@@ -1,37 +1,37 @@
 <template>
-  <input :id="`req${reqi}`" type="checkbox" class="reqChk " style="display: none;" >
-  <div class="df df-wrap" style="">
-    <label class="pointer" :for="`req${reqi}`" style="width: 50px;"># {{reqi + 1}}</label>
-    <el-form ref="formEl" :model="form" :rules="rules" style="margin-right: 20px; flex: 1;" @submit.prevent>
-      <el-form-item prop="url">
-        <div class="df">
-          <el-radio-group v-model="form.method" size="mini">
-            <el-radio-button v-for="e in methodList" :key="e" :label="e"></el-radio-button>
-          </el-radio-group>
-          <div style="flex: 1;">
-            <el-input v-model="form.url" @keyup.enter="send" />
+  <el-card style="margin: 0 20px 20px; position: relative;">
+    <input :id="`req${reqi}`" type="checkbox" class="reqChk " style="display: none;" >
+    <div class="df df-wrap">
+      <label class="df df-aic pointer" :for="`req${reqi}`" style="width: 50px; height: 30px;"># {{reqi + 1}}</label>
+      <el-form ref="formEl" :model="form" :rules="rules" style="margin-right: 20px; flex: 1;" @submit.prevent>
+        <el-form-item prop="url">
+          <div class="df">
+            <el-radio-group v-model="form.method" size="mini" style="margin-right: 10px;">
+              <el-radio-button v-for="e in methodList" :key="e" :label="e"></el-radio-button>
+            </el-radio-group>
+            <div style="flex: 1;">
+              <el-input v-model="form.url" @keyup.enter="send" />
+            </div>
           </div>
-
-        </div>
-      </el-form-item>
-      <requestKv :k-name="`Header Name`" :v-name="`Header Value`" :list="form.headerList" @add-method="addHeader" @remove-method="removeHeader">
-        <template #shortcut>
-          <el-button @click.prevent="addToken">token</el-button>
-          <el-button @click.prevent="addLoginAccount">loginAccount</el-button>
-        </template>
-      </requestKv>
-      <requestKv :k-name="`Param Name`" :v-name="`Param Value`" :list="form.paramList" @add-method="addParam" @remove-method="removeParam">
-      </requestKv>
-    </el-form>
-    <div style="width: 100px;">
-      <el-button v-loading="loading" :disabled="loading" @click="send">Fetch</el-button>
+        </el-form-item>
+        <requestKv :k-name="`Header Name`" :v-name="`Header Value`" :list="form.headerList" @add-method="addHeader" @remove-method="removeHeader">
+          <template #shortcut>
+            <el-button @click.prevent="addToken">token</el-button>
+            <el-button @click.prevent="addLoginAccount">loginAccount</el-button>
+          </template>
+        </requestKv>
+        <requestKv :k-name="`Param Name`" :v-name="`Param Value`" :list="form.paramList" @add-method="addParam" @remove-method="removeParam">
+        </requestKv>
+      </el-form>
+      <div style="margin-right: 20px;">
+        <el-button v-loading="loading" :disabled="loading" @click="send">Fetch</el-button>
+      </div>
+      <div class="collapse-box" style="margin-bottom: 20px; flex: 1; border-radius: 3px;">
+        <div class="collapse" style="word-break: break-all;">{{rest}}</div>
+      </div>
     </div>
-    <div class="collapse-box" style="margin-bottom: 20px; flex: 1; border-radius: 3px;">
-      <div class="collapse" style="word-break: break-all;">{{rest}}</div>
-    </div>
-    <div class="center pointer" style="width: 50px; height: 50px; background: black; border-radius: 50%; position: relative; left: -20px;" @click="remove"><icon-delete style="width: 12px;"/></div>
-  </div>
-  <el-divider/>
+    <div class="center pointer" style="width: 50px; height: 50px; background: #2B2F77; border-radius: 50%; position: absolute; top: 3px; right: 3px;" @click="remove"><icon-delete style="width: 12px;"/></div>
+  </el-card>
 </template>
 
 <script setup>

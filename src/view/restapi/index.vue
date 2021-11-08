@@ -1,6 +1,8 @@
 <template>
+  <proj-header>restful 接口测试</proj-header>
+  <div style="margin-bottom: 20px;"></div>
   <request v-for="(e, i) in formList" :key="`req${i}`" :reqi="i"/>
-  <div class="df df-aic" @click="add">
+  <div class="df df-aic pointer" style="padding: 0 20px; height: 40px;" @click="add">
     # <icon-circle-plus style="margin: 3px; width: 18px; height: 18px;"/>
   </div>
   <el-divider/>
@@ -8,6 +10,8 @@
 
 <script setup>
 // tip: 导入 component
+import ProjHeader from '@/component/nav/projHeader.vue'
+import ElSaveBtn from '@/component/el/el-save-btn.vue'
 import request from './request.vue'
 import { CirclePlus as IconCirclePlus } from '@element-plus/icons'
 // tip: 导入 data

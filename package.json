@@ -7,22 +7,22 @@
     "build:uat": "vite build --mode uat"
   },
   "dependencies": {
-    "@element-plus/icons": "latest",
+    "@element-plus/icons": "^0.0.11",
+    "@tinymce/tinymce-vue": "^4.0.4",
     "element-plus": "latest",
-    "@tinymce/tinymce-vue": "latest",
-    "vue": "latest",
-    "vue-i18n": "latest",
-    "vue-router": "latest",
-    "vuex": "latest"
+    "vue": "^3.2.21",
+    "vue-i18n": "^9",
+    "vue-router": "^4",
+    "vuex": "^4"
   },
   "devDependencies": {
-    "@intlify/vite-plugin-vue-i18n": "latest",
-    "@vitejs/plugin-vue": "latest",
-    "@vue/compiler-sfc": "latest",
-    "eslint": "latest",
-    "eslint-config-prettier": "latest",
-    "eslint-plugin-vue": "latest",
-    "prettier": "latest",
-    "vite": "latest"
+    "@intlify/vite-plugin-vue-i18n": "^3",
+    "@vitejs/plugin-vue": "^1.9.4",
+    "@vue/compiler-sfc": "^3.2.21",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8",
+    "eslint-plugin-vue": "^8.0.3",
+    "prettier": "^2",
+    "vite": "^2.6.13"
   }
 }

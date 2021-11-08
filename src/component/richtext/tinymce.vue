@@ -1,12 +1,13 @@
 <template>
-  <editor :value="props.value" :init="{ plugins: ['image'], images_upload_handler: readPic }"/>
+  <editor v-model="v" :init="{ plugins: ['image'], images_upload_handler: readPic }" @update:model-value="(value) => emit('update:modelValue', value)"/>
+  <!-- <el-input v-model="v" @update:model-value="(value) => emit('update:modelValue', value)" type="textarea" /> -->
 </template>
 
 <script setup>
 // tip: 导入 component
 import Editor from '@tinymce/tinymce-vue'
 // tip: 导入 data
-import { ref, computed } from 'vue'
+import { ref, computed, toRefs } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter, useRoute } from 'vue-router'
 import { wait, emptyFn, clone, site } from '@/fn'
@@ -14,8 +15,10 @@ import { wait, emptyFn, clone, site } from '@/fn'
 const store = useStore(), router = useRouter(), route = useRoute()
 // tip: 定义 页面
 const props = defineProps({
-  value: { type: String, default: '' },
+  modelValue: { type: String, default: '' },
 })
+const v = ref(`${props.modelValue}`)
+const emit = defineEmits(['update:modelValue'])
 // tip: 定义 不需要关联的
 // tip: 定义 需要关联的
 // tip: 定义 computed 计算的
