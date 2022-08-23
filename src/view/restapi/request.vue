@@ -6,7 +6,7 @@
       <el-form ref="formEl" :model="form" :rules="rules" style="margin-right: 20px; flex: 1;" @submit.prevent>
         <el-form-item prop="url">
           <div class="df">
-            <el-radio-group v-model="form.method" size="mini" style="margin-right: 10px;">
+            <el-radio-group v-model="form.method" size="small" style="margin-right: 10px;">
               <el-radio-button v-for="e in methodList" :key="e" :label="e"></el-radio-button>
             </el-radio-group>
             <div style="flex: 1;">
@@ -46,7 +46,7 @@ import { useRouter, useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { wait, empty, clone, storage } from '@/fn'
 // tip: 定义 各种 use
-const store = useStore(), router = useRouter(), route = useRoute()
+const store = useStore(), router = useRouter(), route = useRoute(), { t, locale } = useI18n({ inheritLocale: true })
 // tip: 定义 页面
 const props = defineProps({
   reqi: { type: Number, default: 0 },
