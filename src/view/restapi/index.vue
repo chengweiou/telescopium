@@ -13,7 +13,7 @@
 import ProjHeader from '@/component/nav/projHeader.vue'
 import ElSaveBtn from '@/component/el/el-save-btn.vue'
 import request from './request.vue'
-import { CirclePlus as IconCirclePlus } from '@element-plus/icons'
+import { CirclePlus as IconCirclePlus } from '@element-plus/icons-vue'
 // tip: 导入 data
 import { ref, computed } from 'vue'
 import { useStore } from 'vuex'

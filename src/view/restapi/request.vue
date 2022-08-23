@@ -37,7 +37,7 @@
 <script setup>
 // tip: 导入 component
 import requestKv from './requestKv.vue'
-import { Delete as IconDelete } from '@element-plus/icons'
+import { Delete as IconDelete } from '@element-plus/icons-vue'
 import { ElNotification } from 'element-plus'
 // tip: 导入 data
 import { ref, computed } from 'vue'
@@ -96,7 +96,7 @@ const send = () => {
     let pList = await Promise.all([store.dispatch('restapi/send', { reqi: props.reqi, ...form.value }), wait(1000)])
     loading.value = false
     if (!pList[0]) return
-    ElNotification({ type: 'success', title: '成功' })
+    ElNotification({ type: 'success', title: t('success') })
   })
 
 
